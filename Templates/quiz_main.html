@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, public, max-age=0" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link href="{{ url_for('static', filename='style_main.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+        <title>Quiz</title>
+    </head>
+    <body>
+        <header>
+            <h1>FLOWER QUIZ</h1>
+            <h2>“There are always flowers for those who want to see them.”</h2>
+            <h3>- Henri Mattise -</h3>
+        </header>
+        <div class="image">
+            <h2>Are you a nature lover? Let's test yourself with a short flower quiz!</h2>
+            <form action="/lets_start" method="POST">
+
+                <input type="submit" name="lets_start" value="Let's start!" class="lets_start">
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; Alexandra Šimková, 2020</p>
+        </footer>
+    </body>
+</html>

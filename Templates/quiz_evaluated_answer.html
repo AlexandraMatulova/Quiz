@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, public, max-age=0" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+        <title>Quiz</title>
+    </head>
+    <body>
+        <header>
+            <h1>FLOWER QUIZ</h1>
+            <h3>{{ question['question'] }}</h3>
+        </header>
+
+        <div>
+            <img src="{{ url_for('static', filename=question['image']) }}" alt="Allium" style="width:700px;height:500px;">
+        </div>
+        <div>
+            <form action="/check_answer" method="GET">
+                {% for i in question['answers'] %}
+                <span 
+                    {% if i == question['correct_answer'] %} class='correct'
+                    {% elif users_choice == i and users_choice != question['correct_answer'] %} class='incorrect'
+                    {% endif %}
+                >
+                    <input type="radio" id="Option1" name="Options" value="{{i}}" required>
+                    <label for="Option1"> {{i}}</label><br>
+                </span>
+                {% endfor %}
+                <input type="submit" name="submit_button" value="Submit">
+            </form>
+        </div>
+        <footer>
+            <p>&copy; Alexandra Šimková, 2020</p>
+        </footer>
+    </body>
+</html>
