@@ -1,0 +1,61 @@
+/*colors:
+    background: #555B6E
+    footer, header: #89B0AE
+    text: #FAF9F9
+    alternative light green (powder blue): #BEE3DB
+    alternative apricot: #FFD6BA
+*/
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    background-color: #89B0AE;
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    color: #FAF9F9;
+}
+
+footer, header {
+    background-color: #555B6E; 
+    margin: 0;
+    padding: 7%;
+}
+
+h1, h2, h3 {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.form {
+    padding: 40px;
+    color: #FAF9F9;
+}
+
+@media (min-width: 600px) {
+    .flex {
+        display: flex;
+    }
+
+    .image, .form {
+        flex: 50%;
+    }
+}
+
+/*evaluated answer*/
+.correct {
+    background: green;
+}
+
+.incorrect {
+    background: red;
+}

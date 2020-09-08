@@ -1,0 +1,48 @@
+/*colors:
+    background: #89B0AE
+    footer, header: #555B6E
+    text: #FAF9F9
+    alternative light green (powder blue): #BEE3DB
+    alternative apricot: #FFD6BA
+*/
+html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+
+body {
+    background-color: #89B0AE;
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    color: #FAF9F9;
+}
+
+footer, header {
+    background-color: #555B6E; 
+    margin: 0;
+    padding: 5%;
+}
+
+h1, h2, h3 {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.image {
+    padding: 150px 30px;
+    background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/nikhil-kumar-JdPHvI7VF0o-unsplash.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+
+
