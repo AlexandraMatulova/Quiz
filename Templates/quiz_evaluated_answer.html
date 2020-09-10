@@ -10,26 +10,34 @@
     </head>
     <body>
         <header>
-            <h1>FLOWER QUIZ</h1>
-            <h3>{{ question['question'] }}</h3>
+            <h1>?</h1>
+            <h2>{{ question['question'] }}</h3>
         </header>
 
         <div>
             <img src="{{ url_for('static', filename=question['image']) }}" alt="Allium" style="width:700px;height:500px;">
         </div>
-        <div>
-            <form action="/check_answer" method="GET">
-                {% for i in question['answers'] %}
-                <span 
-                    {% if i == question['correct_answer'] %} class='correct'
-                    {% elif users_choice == i and users_choice != question['correct_answer'] %} class='incorrect'
-                    {% endif %}
-                >
-                    <input type="radio" id="Option1" name="Options" value="{{i}}" required>
-                    <label for="Option1"> {{i}}</label><br>
-                </span>
-                {% endfor %}
-                <input type="submit" name="submit_button" value="Submit">
+        <div class="form"> 
+            {% for i in question['answers'] %}
+                <label class="container
+                    {% if i == question['correct_answer'] %} correct_label
+                    {% elif users_choice == i and users_choice != question['correct_answer'] %} incorrect_label
+                    {% endif %}" 
+                > 
+                    <input type="radio" name="Options" value="{{i}}" disabled>
+                    <span class="checkmark
+                        {% if i == question['correct_answer'] %} correct
+                        {% elif users_choice == i and users_choice != question['correct_answer'] %} incorrect
+                        {% endif %}"    
+                    ></span>
+                    {{i}}
+                </label><br>
+            {% endfor %}
+
+            <form action="/question_page" method="POST">
+                <input type="submit" name="next" value="Next" class="next_button">
+                <input type="hidden" name="session_id" value="{{ session_id }}">
+                <input type="hidden" name="question_index" value="{{ question_index }}">
             </form>
         </div>
         <footer>
