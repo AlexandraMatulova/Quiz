@@ -21,6 +21,12 @@ body {
     padding: 0;
     font-family: 'Merriweather', serif;
     color: #FAF9F9;
+    line-height: 1.5;
+}
+
+img {
+    border:none; 
+    outline: none;
 }
 
 footer, header {
@@ -36,12 +42,49 @@ h1, h2, h3 {
     text-align: center;
 }
 
+h1 {
+    font-size: 40px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+h3 {
+    font-size: 15px;
+}
+
+
 .image {
     padding: 150px 30px;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/nikhil-kumar-JdPHvI7VF0o-unsplash.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
+}
+
+.lets_start_button {
+    background-color: transparent;
+    border: 2px solid #555B6E;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    font-size: 20px;
+    font-style: bold;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lets_start_button:hover {
+    background-color: #FAF9F9;
+    opacity: 0.7;
+    color: #555B6E;
+}
+
+.button_holder {
+    text-align: center;
 }
 
 
