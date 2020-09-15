@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate, public, max-age=0" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+        <link href="{{ url_for('static', filename='style_main.css') }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+        <title>Quiz</title>
+    </head>
+    <body>
+        <header>
+            <h1>QUIZ</h1>
+            <!--<h2 class="saying">“At some point in life the world's beauty becomes enough. You don't need to photograph, paint, or even remember it. It is enough.”</h2>
+            <h3>- Toni Morrison -</h3>-->
+        </header>
+        <!--<nav class="menu">
+            <a href="">Flowers</a>
+            <a href="">Birds</a>
+            <a href="">Insects</a>
+          </nav>-->
+        <div class="image">
+            <h2 class="introduction">Are you a nature lover? Let's test yourself with a short quiz. Maybe you will learn more about flowers, birds or insects in these quizes or you will find out that you are better than you thought! Text on the next page will help you recognize what creature or flower is in the picture.</h2>
+            <form action="/question_page" method="POST" class="button_holder">
+                <input type="submit" name="category" value="Flowers" class="lets_start_button">
+                <input type="submit" name="category" value="Birds" class="lets_start_button">
+                <input type="submit" name="category" value="Insects" class="lets_start_button">
+                <input type="hidden" name="session_id" value="{{ session_id }}">
+            </form>
+        </div>
+        
+        <footer>
+            <p>&copy; Alexandra Šimková, 2020</p>
+        </footer>
+    </body>
+</html>

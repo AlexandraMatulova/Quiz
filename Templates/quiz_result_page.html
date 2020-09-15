@@ -10,12 +10,13 @@
     </head>
     <body>
         <header>
-            <h1>FLOWER QUIZ</h1>
-            <h2>“There are always flowers for those who want to see them.”</h2>
-            <h3>- Henri Mattise -</h3>
+            <h1>FLOWER QUIZ RESULT</h1>
         </header>
         <div class="image">
-            <h2 class="introduction">Your result is: </h2>
+            <h2 class="introduction">You correctly answered {{ no_correct_answers }} questions out of {{ no_questions }}.</h2>
+            <form action="/" method="POST">
+                <input type="submit" name="back_to_home_page" value="BACK TO HOME PAGE" class="lets_start_button">
+            </form>
         </div>
         
         <footer>

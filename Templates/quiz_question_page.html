@@ -11,40 +11,33 @@
     <body>
         <header>
             <h1>?</h1>
-            <h2>{{ question['question'] }}</h2>
+            <h2>{{ question.question }}</h2>
         </header>
         <div class="flex">
-            <div class="image">
-                <img src= "{{ url_for('static', filename=question['image']) }}" alt="Flower" style="width:700px;height:500px;">
+            <div class="image" style="background-image: url('{{ question.image_url() }}')">
             </div>
             <div class="form">
                 <form action="/check_answer" method="POST">
                     <label class="container" for="Option1"> 
-                        <input type="radio" id="Option1" name="Options" value="{{question['answers'][0]}}" required>
-                        {{ question['answers'][0] }}
+                        <input type="radio" id="Option1" name="Options" value="{{question.answer1}}" required>
+                        {{ question.answer1 }}
                         <span class="checkmark"></span>
                     </label><br>
                       
                     <label class="container" for="Option2"> 
-                        <input type="radio" id="Option2" name="Options" value="{{question['answers'][1]}}" required>
-                        {{ question['answers'][1] }}
+                        <input type="radio" id="Option2" name="Options" value="{{question.answer2}}" required>
+                        {{ question.answer2 }}
                         <span class="checkmark"></span>
                     </label><br>
                       
                     <label class="container" for="Option3"> 
-                        <input type="radio" id="Option3" name="Options" value="{{question['answers'][2]}}" required>
-                        {{ question['answers'][2] }}
+                        <input type="radio" id="Option3" name="Options" value="{{question.answer3}}" required>
+                        {{ question.answer3 }}
                         <span class="checkmark"></span>
                     </label><br>
-                    <!--<input type="radio" id="Option1" name="Options" value="{{question['answers'][0]}}" required>
-                    #<label for="Option1"> {{ question['answers'][0] }}</label><br>
-                    #<input type="radio" id="Option2" name="Options" value="{{question['answers'][1]}}" required>
-                    <label for="Option2"> {{ question['answers'][1] }}</label><br>
-                    <input type="radio" id="Option3" name="Options" value="{{question['answers'][2]}}" required>
-                    <label for="Option3"> {{ question['answers'][2] }}</label><br>-->
                     <input type="submit" name="submit_button" value="Submit" class="submit_button">
                     <input type="hidden" name="session_id" value="{{ session_id }}">
-                    <input type="hidden" name="question_index" value="{{ question_index }}">
+                    <input type="hidden" name="question_index" value="{{ question.id }}">
                 </form>
             </div>
         </div>
