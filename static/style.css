@@ -7,6 +7,8 @@
 */
 html {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
   }
   
   *,
@@ -19,17 +21,18 @@ body {
     background-color: #89B0AE;
     margin: 0;
     padding: 0;
-
     font-family: 'Merriweather', serif;
     color: #FAF9F9;
     line-height: 1.5;
 }
 
-img {
-    border:none; 
-    outline: none;
-    display: block;
+.image {
+    min-height: 500px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
 }
+
 
 footer, header {
     background-color: #555B6E; 
@@ -74,6 +77,10 @@ h3 {
     -ms-user-select: none;
     user-select: none;
   }
+
+.container_evaluated_answer {
+    pointer-events: none;  
+}
 
   
   /* Hide the browser's default radio button */
@@ -151,8 +158,9 @@ h3 {
     color: white;
 }
 
+/* Setting dynamic classes - correct/incorrect answer */
 .correct {
-    background: #BEE3DB;
+    background: #555B6E;
 }
 
 .incorrect {
@@ -160,20 +168,64 @@ h3 {
 }
 
 .correct_label {
-    color: #BEE3DB;
+    color: #555B6E;
+    text-decoration: underline;
 }
 
 .incorrect_label {
     color: #FFD6BA;
+    text-decoration: line-through;
 }
 
 
+/*TABLET*/
 @media (min-width: 600px) {
     .flex {
         display: flex;
     }
 
     .image, .form {
-        flex: 50%;
+        flex:50%;
     }
+
+    h1, h2, h3 {
+        max-width: 1000px;
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+    }
+
+    h1 {
+        font-size: 50px;
+    }
+
+    h2, .container {
+        font-size: 25px;
+    }
+
+    h3 {
+        font-size: 25px;
+    }
+
+    body {
+        font-size: 25px;
+    }
+ 
+    .checkmark {
+        height: 27px;
+        width: 27px;
+        top: 5px;
+    }
+}
+
+/*DESKTOP*/
+@media (min-width: 1000px) {
+    .image {
+        min-height: 600px;
+    }
+
+    .container {
+        font-size: 25px;
+    }
+
 }

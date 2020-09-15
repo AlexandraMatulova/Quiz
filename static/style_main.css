@@ -50,9 +50,38 @@ h2 {
     font-size: 20px;
 }
 
+.saying {
+    font-style: italic;
+}
+
 h3 {
     font-size: 15px;
 }
+
+
+/*MENU
+.menu {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: #555B6E;
+    background-color: #BEE3DB;
+    border-top: 1px solid #89B0AE;
+    border-bottom: 1px solid #89B0AE;
+  }
+  
+.menu a {
+    display: block;
+    padding: 20px 30px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #555B6E;
+}
+  
+.menu a:hover {
+    background-color: #555B6E;
+    color:#FAF9F9;
+}*/
 
 
 .image {
@@ -75,17 +104,53 @@ h3 {
     font-style: bold;
     margin-left: auto;
     margin-right: auto;
+    display: block;
 }
 
 .lets_start_button:hover {
-    background-color: #FAF9F9;
-    opacity: 0.7;
-    color: #555B6E;
+    background-color: #555B6E;
+    opacity: 1;
+    color: #FAF9F9;
 }
 
 .button_holder {
     text-align: center;
 }
+
+/*TABLET*/
+@media (min-width: 600px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    h3 {
+        font-size: 20px;
+    }
+
+    body {
+        font-size: 20px;
+    }
+
+    h1, h2, h3 {
+        max-width: 900px;
+    }
+
+    /*.menu a {
+        display: inline-block;
+        font-size: 25px;
+    }*/
+
+    .button_holder .lets_start_button {
+        display: inline-block;
+        font-size: 25px;
+    }
+}
+
+/*DESKTOP*/
 
 
 
