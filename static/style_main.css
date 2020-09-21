@@ -58,34 +58,8 @@ h3 {
     font-size: 15px;
 }
 
-
-/*MENU
-.menu {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    color: #555B6E;
-    background-color: #BEE3DB;
-    border-top: 1px solid #89B0AE;
-    border-bottom: 1px solid #89B0AE;
-  }
-  
-.menu a {
-    display: block;
-    padding: 20px 30px;
-    font-size: 20px;
-    text-decoration: none;
-    color: #555B6E;
-}
-  
-.menu a:hover {
-    background-color: #555B6E;
-    color:#FAF9F9;
-}*/
-
-
 .image {
-    padding: 150px 30px;
+    padding: 100px 30px;
     background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('images/nikhil-kumar-JdPHvI7VF0o-unsplash.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -105,6 +79,7 @@ h3 {
     margin-left: auto;
     margin-right: auto;
     display: block;
+    width: 200px;
 }
 
 .lets_start_button:hover {
@@ -117,7 +92,7 @@ h3 {
     text-align: center;
 }
 
-/*TABLET*/
+/*TABLET & DESKTOP*/
 @media (min-width: 600px) {
     h1 {
         font-size: 50px;
@@ -139,18 +114,28 @@ h3 {
         max-width: 900px;
     }
 
-    /*.menu a {
-        display: inline-block;
-        font-size: 25px;
-    }*/
+    .lets_start_button {
+        width: auto;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+
+    .back {
+        margin: auto;
+    }
+
+    .image {
+        padding: 130px 30px 150px 30px;
+    }
 
     .button_holder .lets_start_button {
         display: inline-block;
         font-size: 25px;
+        margin-top: 15px;
     }
 }
 
-/*DESKTOP*/
+
 
 
 
