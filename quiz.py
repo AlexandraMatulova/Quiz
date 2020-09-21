@@ -1,12 +1,13 @@
 from flask import Flask, url_for, request
 from flask import render_template
-import random
 from random import randint
-import string
-from Question import Question
+
+from question import Question
 from utils import sql_execute
+from utils import get_random_string
 
 app = Flask(__name__)
+
 app.config['DEBUG'] = True 
 print(app.root_path)
 app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0
@@ -39,7 +40,7 @@ def lets_start():
         cursor_category = sql_execute(f"SELECT CATEGORY FROM USERS WHERE SESSION_ID = '{session_id}'")
         category = cursor_category.fetchone()[0]
 
-    # selects question - excludes already asked questions
+    # selects list of IDs of already asked questions
     cursor_answered_questions = sql_execute(f"""
         SELECT INDEX_ANSWERED_QUESTION FROM LIST_ANSWERED_QUESTIONS WHERE SESSION_ID = '{session_id}'
     """)
@@ -91,13 +92,6 @@ def check_answer():
             UPDATE USERS SET NO_CORRECT_ANSWERS={no_correct_answers} WHERE SESSION_ID='{session_id}'
         """)
     return render_template('quiz_evaluated_answer.html', users_choice=users_choice, question=question, session_id=session_id)
-
-
-# Session ID: Random string with the combination of lower and upper case, length 32
-def get_random_string(length):
-    letters = string.ascii_letters
-    result_str = ''.join(random.choice(letters) for i in range(length))
-    return result_str
 
 
 if __name__ == "__main__":
